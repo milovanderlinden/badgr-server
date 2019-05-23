@@ -87,6 +87,8 @@ badgr_admin.register(BadgeUser, BadgeUserAdmin)
 
 
 class BadgeUserProxyAdmin(BadgeUserAdmin):
+
+    change_form_template = "admin/user_change_list.html"
     actions = ['delete_selected']
     readonly_fields = ('entity_id', 'date_joined', 'last_login', 'username', 'entity_id', 'agreed_terms_version')
     list_display = ('email', 'first_name', 'last_name', 'is_active', 'is_staff', 'entity_id', 'date_joined', 'faculties')
